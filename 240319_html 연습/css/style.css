@@ -57,3 +57,24 @@ h1 + h2 {       /*h1과 h3는 자매여야함. h1 바로 아랫자매 h2에 적�
 h1 ~ h3 {       /*h1과 h3 자매여야함. h1 아랫자매 모든 h3에 적용*/
     background-color: indianred;
 }
+
+[type="text"] {     /*type 속성의 값이 text인 아이에 적용*/
+    background-color: lavender;
+}
+
+/* 홀수번째 자매 중 li인 애들에 적용*/
+li:nth-child(2n-1) {        /*아잉*/
+    font-size: 20px;
+}
+
+li:nth-child(odd) {     /*홀수: 2n-1, odd*/
+    font-size: 8px;
+}
+
+li:nth-child(even) {        /*짝수: even, 2n*/
+    font-weight: 200px;
+}
+
+body > ul:nth-child(26) > li:nth-child(6) {
+    font-size: 100px;
+}
