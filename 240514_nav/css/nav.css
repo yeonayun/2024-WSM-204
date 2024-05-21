@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Nanum+Myeongjo&display=swap');
 
 /* css Variables */
@@ -22,8 +23,7 @@
     --z-index: 180;
 
     /* nav */
-    --nav-height: 44px;
-     
+    --nav-height: 44px;  
 }
 
 /* nav */
@@ -31,12 +31,14 @@ body{
     font-family: var(--body-font);
     background-color: var(--body-color);
 }
+
 body>header{
     position:absolute;
     top: 0;
     right: 0;
     left: 0;
 }
+
 nav.container{
     background-color: var( --primary-color);
     height: var(--nav-height);
@@ -47,31 +49,39 @@ nav.container{
     color: #fff;
     font-size: var(--h2-font-size);     /* 웹 폰트 아이콘, 글자 크게 */
 }
+
 nav a {
     color: #fff;
 }
+
 .nav-logo{
     margin-top: 5px;
 }
+
 .nav-list{
     display: flex;
     align-items: center;
     column-gap: 40px;   /* 열 사이의 간격 */
+    transition: 0.4s ease-in-out;
 }
+
 .nav-toggle{
     display: none;  /* 햄버거 바 사라짐 */
+    cursor:pointer;
 }
+
 /* mobile */
 @media screen and (max-width: 600px) {  /* 600px 이하 일 때 스타일 */
     nav.container {
         padding: 0 20px;    /* 왼/오른 여백을 줄이자 */
+        z-index: var(--z-index);
     }
 
     .nav-list{
         flex-direction: column; /* 세로로 배치 */
         background-color: hsla(200, 100%, 25%, 0.6);
         position: absolute;
-        top: calc var( (--nav-height) - 140px); /* 실제 위치는 44px - 140px. !주의 연산자 양 옆 띄어쓰기 꼭 해야함*/
+        top: calc(var(--nav-height) - 140px); /* 실제 위치는 44px - 140px. !주의 연산자 양 옆 띄어쓰기 꼭 해야함*/
         right: 0;
         left: 0;
         z-index: -1; /* nav뒤에 숨기자 */
@@ -90,6 +100,7 @@ nav a {
 
     .nav-toggle{
         display: block; /* 햄버거 메뉴 보여라 */
+        cursor: pointer;
     }
 
     .show-menu {
