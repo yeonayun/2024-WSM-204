@@ -86,7 +86,7 @@ const setSchoolFoodmenu = (data) => {
                 menu = menu.split("<br/>");
                     // 하나씩 꺼내어 <li class = "menu-food">하나의 꺼낸 음식</li>
                     menu.forEach((food) => {
-                        menuFood += `<li class => "menu-food">${food}</li>\n`;
+                        menuFood += `<li class = "menu-food">${food}</li>\n`;
                     });
 
                     // js 변수 -> HTML 표시
