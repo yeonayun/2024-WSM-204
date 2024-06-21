@@ -34,6 +34,7 @@ body{
 
 body>header{
     position:absolute;
+    position: fixed; /*nav바 고정*/
     top: 0;
     right: 0;
     left: 0;
