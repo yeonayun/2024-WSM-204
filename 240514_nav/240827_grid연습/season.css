@@ -1,0 +1,32 @@
+.container{
+    display: grid;
+    width: 800px;
+    height: 400px;
+    grid-template-columns: 30% 70%; /* =repeat(2,fr)*, repeat(2,50%), 50% 50% */
+    grid-template-rows: 4fr 6fr;
+}
+
+.item{
+    /* border: 1px solid hotpink; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    display: grid;
+    place-items: center;
+}
+
+.item:first-child{
+    background-color: antiquewhite;
+}
+
+.item:nth-child(2){
+    background-color: skyblue;
+}
+
+.item:nth-child(3){
+    background-color: burlywood;
+}
+
+.item:last-child(4){
+    background-color: whitesmoke;
+}

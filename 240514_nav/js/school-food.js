@@ -43,7 +43,7 @@ KEY=${API_KEY}\
     // error 없이 응답 오면, 데이터 처리
     // error 있으면, 에러 처리
 
-    // 함수(파라1).then().carch()     함수(파라1);시에 에러 세미콜론 놉
+    // 함수(파라1).then().catch()     함수(파라1);시에 에러 세미콜론 놉
     fetch(api_url) //api_url에 비동기적으로 요청
         .then((response) => response.json())
         .then((data) => setSchoolFoodmenu(data)) // 학교 급식 정보를 HTML에 표시하자
