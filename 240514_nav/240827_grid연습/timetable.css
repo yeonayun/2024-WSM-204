@@ -1,0 +1,26 @@
+.container{
+    display: grid;
+    width: 600px;
+    height: 800px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.item{
+    display: grid;
+    place-items: center;
+    border: 1px solid hotpink;
+}
+
+.a{
+    background-color: lightpink;
+    color:white;
+}
+
+.o{
+    grid-row: span 2;
+}
+
+.c{
+    color:hotpink;
+}
