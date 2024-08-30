@@ -1,26 +1,71 @@
 .container{
-    display: grid;
     width: 600px;
-    height: 800px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height:500px;
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr; /*= repeat(5, 1fr)*/
 }
 
 .item{
-    display: grid;
+    border: 1px solid gray;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: grid; /*글자 수평 가운데로 맞추기(아래 거랑 두 개 같이 써야됨)*/
     place-items: center;
-    border: 1px solid hotpink;
 }
 
-.a{
-    background-color: lightpink;
-    color:white;
+.week_name{
+    background-color: pink;
+    color: white;
 }
 
-.o{
-    grid-row: span 2;
+/* .item:nth-child(6n+1){ /*6n+1: 7번째, 13번째... 등 칸 개수 일반화*/
+    
+.class{
+    color: palevioletred;
 }
 
-.c{
-    color:hotpink;
+.Ds{
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 3;
+}
+
+.wsm{
+    grid-row-start: span 2;
+    grid-row-end: 9;
+    grid-column-start: 3;
+}
+
+.java{
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 4;
+}
+
+.club{
+    /* grid-row-start: 7;
+    grid-row-end: 9;
+    grid-column-start: 4; */
+    grid-area: 7/4/9/5;
+    /* = grid-area: 7/4/span 2/5; */
+}
+
+.co{
+    /* grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 5; */
+    grid-area: 4/5/6/6; /* grid-area: row-start/column-start/row-end/column-end */
+}
+
+.python{
+    grid-area: 6/5/8/6
+}
+
+.wsm2{
+    grid-area: 4/6/6/7;
+}
+
+.choice{
+    grid-area: 6/6/span 2/7;
 }
