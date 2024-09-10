@@ -40,6 +40,14 @@
     font-weight: bold;
 }
 
-.other-date{
-    color: #dddd
+.item:nth-child(7n+1){ /*일요일만 빨간색*/
+    color: crimson;
+}
+
+.item:nth-child(7n+7){ /*토요일만 파란색*/
+    color: blue;
+}
+
+.other-month{
+    color: #dddd !important /*우선순위 가장 높은 거*/
 }
