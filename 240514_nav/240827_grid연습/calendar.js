@@ -29,23 +29,23 @@ prevMonthButton.addEventListener("click", () => changeMonth(-1)); // .addEventLi
 const nextMonthButton = document.querySelector("#next-month");
 nextMonthButton.onclick = () => changeMonth(1);
 
-//일 구하자
+//달력 표시하자(요일, 날짜)
 const setCalendar = (date) => {
     console.log(date);
     const year = date.getFullYear();
     const month = date.getMonth();
 
+//이전 달 마지막 날짜 구하자: 이번 달 첫날 - 1
+    const prevMonthLastDate = new Date(year, month, 0);
+
 //첫 날의 요일 구하자: 이전 달 뒷날짜 쓰기 위하여
     const firstDay = new Date(year, month, 1).getDay(); //0:일요일, 6:토요일
-    console.log(firstDay);
 
 //마지막 날짜 구하자: 요일 구하기 위하여
     const lastDate = new Date(year, month + 1, 0) //실제 마지막 날짜만 구하려면 lastDate.getDate()
-    console.log(lastDate.getDate());
 
 //마지막 날의 요일 구하자: 다음 달 앞 날짜 쓰기 위하여
     const lastDay = lastDate.getDay();
-    console.log(lastDay);
 
 //일월화수목금토
     // const weekNameString = `<div class = "item week-name">일</div>
@@ -65,7 +65,14 @@ const setCalendar = (date) => {
         calendarContainerDiv.innerHTML = weekNameString;
 
 //이전 달 뒷날짜 구하자
-//0~이번 달 1일의 요일 -1까지 이전 달 마지막 날짜 - 이번 달 1일의 요일 + 1(시작날짜)부터 +1 해서 쓰자
+//?~이전 달 마지막 날짜 ?: 이전 달 마지막 날짜 = 이번 달 첫날의 요일 + 1
+for (let date = (prevMonthLastDate.getDate() - firstDay + 1); date <= prevMonthLastDate.getDate(); date++){
+    let currentMonthDateDiv = document.createElement("div"); // <div></div>
+    currentMonthDateDiv.className = "item other-month"; // <div class = "item other-month"></div>
+    currentMonthDateDiv.textContent = date; // <div class = "item other-month"> 1 </div>
+    calendarContainerDiv.appendChild(currentMonthDateDiv); // <div id = "calendar-container"><div class = "item other-month">1</div></div>
+}
+
 
 //이번 달 날짜들 쓰자: 1~30: 1~lastDate.getDate()
 // let dateString = "";
@@ -83,7 +90,13 @@ for (let date = 1; date <= lastDate.getDate(); date++){
 }
 
 //다음 달 앞날짜 구하자
-//이번 달2~6까지 1부터 차례대로 날짜 쓰자
+//1~? ?: 6~이번 달 마지막 날짜의 요일
+for (let date = 1; date <= (6 - lastDate.getDay()); date++){
+    let currentMonthDateDiv = document.createElement("div"); // <div></div>
+    currentMonthDateDiv.className = "item other-month"; // <div class = "item other-month"></div>
+    currentMonthDateDiv.textContent = date; // <div class = "item other-month"> 1 </div>
+    calendarContainerDiv.appendChild(currentMonthDateDiv); // <div id = "calendar-container"><div class = "item other-month">1</div></div>
+}
 }
 
 setCalendarHeader(currentDate);
