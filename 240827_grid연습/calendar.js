@@ -90,7 +90,7 @@ for (let date = 1; date <= lastDate.getDate(); date++){
 }
 
 //다음 달 앞날짜 구하자
-//1~? ?: 6~이번 달 마지막 날짜의 요일
+//1~? ?: 6~이번 달 마지막 날짜의 요일                      
 for (let date = 1; date <= (6 - lastDate.getDay()); date++){
     let nextMonthDateDiv = document.createElement("div"); // <div></div>
     nextMonthDateDiv.className = "item other-month"; // <div class = "item other-month"></div>
