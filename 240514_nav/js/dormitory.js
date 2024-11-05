@@ -148,7 +148,7 @@ const initWashingmachineTime = () => {
                 // <option value="1">7시 ~ 8시10분</option>
                 const newOption = document.createElement("option");
                 newOption.value = time;
-                newOption.textContent = allData.time[time]; //"2" -> allData.time["2"](8시 10분 ~ 9시 20분).time -> allData.
+                newOption.textContent = allData.time[time]; //"2" -> allData.time["2"](8시 10분 ~ 9시 20분).time -> allData.time[time]
 
                 timeSelect.appendChild(newOption);
             });
