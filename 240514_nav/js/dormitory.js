@@ -101,22 +101,11 @@ const initWashingmachineTime = () => {
     let allWashingmachineTime = {};
     let washingmachines; //세탁기 번호 모음
 
-    //기숙사에 있는 모든 세탁기, 시간 정보 가져오자
-    console.log(allData);
-    console.log(allData.washingmachine); //[1, 2, 3]
-    console.log(allData.time);
-    console.log(Object.keys(allData.time)); //["1", "2", "3"]
-
-
-    //미리 예약된 정보 가져오자
-    console.log(weeklyReservations);
-
     //초기 데이터 세팅하자: {"1": ["1", "2", "3"], "2": ["1", "2", "3"], "3": ["1", "2", "3"]}
     // allData.washingmachine에서 하나씩 꺼내자 => washingmachine
     allData.washingmachine.forEach((washingmachine) => {
         allWashingmachineTime[washingmachine] = Object.keys(allData.time); //aWT["1"] = ["1", "2", "3"] => aWT = {"1":["1", "2", "3"]}
     });
-    console.log(allWashingmachineTime);
 
         //선택한 날짜의 요일 구하자
 
